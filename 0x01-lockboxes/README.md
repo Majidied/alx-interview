@@ -74,5 +74,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Special thanks to the algorithmic problem-solving community and various online resources that provided insights and examples used in this project.
 
 ---
-
-This README provides a comprehensive overview of the "0x01-lockboxes" project, guiding users through its purpose, structure, requirements, and usage.

@@ -31,22 +31,19 @@ if __name__ == "__main__":
 
     try:
         for line in sys.stdin:
-            match = regex.match(line)
+            line = line.strip()
+            match = regex.fullmatch(line)
             if match:
-                status_code, file_size = match.groups()
-                log["file_size"] += int(file_size)
-                if status_code in log["code_frequency"]:
-                    log["code_frequency"][status_code] += 1
-                else:
-                    log["code_frequency"][status_code] = 1
+                line_count += 1
+                code = match.group(1)
+                file_size = int(match.group(2))
 
-            line_count += 1
-            if line_count % 10 == 0:
-                output(log)
+                log["file_size"] += file_size
 
-    except KeyboardInterrupt:
-        output(log)
-        sys.exit()
+                if code.isdecimal():
+                    log["code_frequency"][code] += 1
 
+                if line_count % 10 == 0:
+                    output(log)
     finally:
         output(log)

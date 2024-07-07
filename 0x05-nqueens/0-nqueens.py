@@ -4,15 +4,17 @@ import sys
 
 
 def is_safe(board, row, col):
-    """ Check if a queen can be placed on board[row][col] """
+    """Check if a queen can be placed on board[row][col]"""
     for i in range(col):
-        if board[i] == row or board[i] == row - col + i or board[i] == row + col - i:
+        if board[i] == row or \
+           board[i] == row - col + i or \
+           board[i] == row + col - i:
             return False
     return True
 
 
 def solve(board, col):
-    """ Solve N queens problem """
+    """Solve N queens problem"""
     n = len(board)
     if col == n:
         print(str([[i, board[i]] for i in range(n)]))

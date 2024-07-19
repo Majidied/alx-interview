@@ -14,7 +14,11 @@ def rotate_2d_matrix(matrix):
     Returns:
         None: The matrix is rotated in-place.
     """
-    if not matrix or not matrix[0]:
+    if type(matrix) != list:
+        return
+    if len(matrix) <= 0:
+        return
+    if not all(map(lambda x: type(x) == list, matrix)):
         return
 
     np.transpose(matrix)

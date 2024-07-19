@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """ Rotate Matrix 90 deg """
-from itertools import chain
-import numpy as np
 
 
 def rotate_2d_matrix(matrix):
